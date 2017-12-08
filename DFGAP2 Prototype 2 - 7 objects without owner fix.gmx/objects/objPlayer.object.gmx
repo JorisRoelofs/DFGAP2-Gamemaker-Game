@@ -25,18 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scrPlayerStatsStandard();
-scrPlayerStatsPersonalized();
-
-stress = 0.5;
-happiness = 0.5;
-
-speedMax = 60 / room_speed;
-
-lightIncrease = 0.5/room_speed;
+            <string>scrPlayerEmotionsStandard();
+scrPlayerStatsStandard();
+scrPlayerStatsEmotionsPersonalized();
 
 mask_index = sprPlayerMask;
-
+speedMax = 60 / room_speed;
 scrPlayerWandering();
 </string>
           </argument>
@@ -71,16 +65,14 @@ else
     else
     {
         distanceTravelled += max(60/room_speed,speed);
-        stress += stressChange;
-        happiness += happinessChange;
     }
 }
 
-if(stress &lt; 0 || stress &gt; 1) game_restart();
-if(happiness &lt; 0 || happiness &gt; 1) game_restart();
-
-stress = clamp(stress,0,1);
-happiness = clamp(happiness,0,1);
+for(i=0;i&lt;array_length_1d(emoName);i++)
+{
+    if(emoValue[i] &lt; 0 || emoValue[i] &gt; 1) game_restart();
+    clamp(emoValue[i],0,1);
+}
 </string>
           </argument>
         </arguments>
@@ -155,10 +147,17 @@ happiness = clamp(happiness,0,1);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(other.image_index = 1) stress += lightIncrease;
-if(other.image_index = 2) stress -= lightIncrease;
-if(other.image_index = 3) happiness += lightIncrease;
-if(other.image_index = 4) happiness -= lightIncrease;
+            <string>for(i = 0; i &lt; array_length_1d(emoName);i++)
+{
+    if(other.image_index = emoLightIndexPositive[i])
+    {
+        emoValue[i] += 1/(emoLightIncrease[i]*room_speed);
+    }
+    else if(other.image_index = emoLightIndexNegative[i])
+    {
+        emoValue[i] -= 1/(emoLightDecrease[i]*room_speed);
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -181,7 +180,8 @@ if(other.image_index = 4) happiness -= lightIncrease;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scrDrawBar();
+            <string>//scrDrawStatBar();
+scrDrawEmoBar();
 </string>
           </argument>
         </arguments>

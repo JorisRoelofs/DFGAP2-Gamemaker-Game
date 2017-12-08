@@ -23,10 +23,18 @@ for(i = 0; i < array_length_1d(statName); i++)
                 }
             
                 doSomethingElse = false;
+                
                 speed = 0;
                 x = statObject[i].x + 0.5*sprite_get_width(sprite_index);
                 y = statObject[i].y + 0.5*sprite_get_height(sprite_index);
+                
                 statValue[i] += 1/(statValueIncrease[i]*room_speed);
+                
+                for(j=0;j<array_length_2d(statActivityEmotionChange,i);j++)
+                {
+                    emoValue[j] += statActivityEmotionChange[i,j]/(statValueIncrease[i]*room_speed);
+                }
+                
                 if(statValue[i] >= 1)
                 {
                     statActivityTrue[i] = false;

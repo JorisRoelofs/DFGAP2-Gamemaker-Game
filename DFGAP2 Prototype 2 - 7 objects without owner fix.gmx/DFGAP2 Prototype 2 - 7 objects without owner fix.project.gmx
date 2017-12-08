@@ -23,12 +23,14 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scrKeyboardCheck.gml</script>
-    <script>scripts\scrDrawBar.gml</script>
+    <script>scripts\scrDrawStatBar.gml</script>
+    <script>scripts\scrDrawEmoBar.gml</script>
     <scripts name="Player Scripts">
       <script>scripts\scrPlayerWandering.gml</script>
       <script>scripts\scrActivity.gml</script>
       <script>scripts\scrPlayerStatsStandard.gml</script>
-      <script>scripts\scrPlayerStatsPersonalized.gml</script>
+      <script>scripts\scrPlayerEmotionsStandard.gml</script>
+      <script>scripts\scrPlayerStatsEmotionsPersonalized.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
