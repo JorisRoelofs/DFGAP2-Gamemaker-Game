@@ -6,29 +6,43 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\sprite0</sprite>
-    <sprite>sprites\sprite1</sprite>
-    <sprite>sprites\sprite2</sprite>
-    <sprite>sprites\sprite3</sprite>
-    <sprite>sprites\sprite4</sprite>
+    <sprites name="Collision Masks">
+      <sprite>sprites\sprPlayerMask</sprite>
+      <sprite>sprites\sprInteractibleMask</sprite>
+    </sprites>
+    <sprites name="Shitty Sprites">
+      <sprite>sprites\sprite0</sprite>
+      <sprite>sprites\sprite1</sprite>
+      <sprite>sprites\sprite2</sprite>
+      <sprite>sprites\sprite3</sprite>
+      <sprite>sprites\sprite5</sprite>
+      <sprite>sprites\sprite4</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scrKeyboardCheck.gml</script>
     <script>scripts\scrDrawBar.gml</script>
-    <script>scripts\scrPlayerWandering.gml</script>
+    <scripts name="Player Scripts">
+      <script>scripts\scrPlayerWandering.gml</script>
+      <script>scripts\scrActivity.gml</script>
+      <script>scripts\scrPlayerStatsStandard.gml</script>
+      <script>scripts\scrPlayerStatsPersonalized.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
+    <object>objects\objGod</object>
     <object>objects\obj_framerate</object>
     <object>objects\objLight</object>
     <object>objects\objSolid</object>
     <object>objects\objBed</object>
+    <object>objects\objComputer</object>
     <object>objects\objPlayer</object>
-    <object>objects\objUIBars</object>
     <object>objects\objInteractible</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rmStart</room>
     <room>rooms\room0</room>
   </rooms>
   <help>

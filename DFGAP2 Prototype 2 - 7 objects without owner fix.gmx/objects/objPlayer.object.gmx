@@ -25,25 +25,19 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>stress = 0.5;
-happiness = 0.5;
-sleep = random_range(0.8,1);
-sleepChange = -0.1/room_speed;
-sleepingChange = 0.2/room_speed;
+            <string>scrPlayerStatsStandard();
+scrPlayerStatsPersonalized();
 
-objMyBed = instance_nearest(x,y,objBed);
+stress = 0.5;
+happiness = 0.5;
+
 speedMax = 60 / room_speed;
-sleepMinMin = 0.5;
-sleepMinMax = 0.3;
-sleepMin = random_range(sleepMinMin,sleepMinMax);
-sleepDesire = 0;
 
 lightIncrease = 0.5/room_speed;
 
-scrPlayerWandering();
+mask_index = sprPlayerMask;
 
-UIBars = instance_create(x,y,objUIBars);
-UIBars.player = id;
+scrPlayerWandering();
 </string>
           </argument>
         </arguments>
@@ -66,24 +60,7 @@ UIBars.player = id;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(sleepDesire = 0) sleep += sleepChange;
-
-if(sleepDesire &gt; 0)
-{
-    speed = 0;
-    x = objMyBed.x + 0.5*sprite_get_height(sprite_index);
-    y = objMyBed.y + 0.5*sprite_get_height(sprite_index);
-    sleep += sleepingChange;
-    if(sleep &gt;= sleepDesire)
-    {
-        sleepDesire = 0;
-        sleepMin = random_range(sleepMinMin,sleepMinMax);
-    }
-}
-else if(sleep &lt; sleepMin)
-{
-    mp_potential_step(objMyBed.x, objMyBed.y, speedMax, false);
-}
+            <string>if(scrActivity(statName));
 else
 {
     if(distanceTravelled &gt; distanceMax)
@@ -102,7 +79,6 @@ else
 if(stress &lt; 0 || stress &gt; 1) game_restart();
 if(happiness &lt; 0 || happiness &gt; 1) game_restart();
 
-sleep = clamp(sleep,0,1);
 stress = clamp(stress,0,1);
 happiness = clamp(happiness,0,1);
 </string>
@@ -110,7 +86,7 @@ happiness = clamp(happiness,0,1);
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objBed">
+    <event eventtype="4" ename="objInteractible">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -127,7 +103,14 @@ happiness = clamp(happiness,0,1);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(other.id = objMyBed.id &amp;&amp; sleep &lt; sleepMin) sleepDesire = random_range(0.8,1);
+            <string>for(i = 0; i &lt; array_length_1d(statName); i++)
+{
+    if(statObject[i] != -1
+    &amp;&amp; instance_exists(statObject[i])
+    &amp;&amp; statValue[i] &lt;= 0
+    &amp;&amp; statObject[i].id = other.id)
+        statActivityTrue[i] = true;
+}
 </string>
           </argument>
         </arguments>
@@ -176,6 +159,29 @@ happiness = clamp(happiness,0,1);
 if(other.image_index = 2) stress -= lightIncrease;
 if(other.image_index = 3) happiness += lightIncrease;
 if(other.image_index = 4) happiness -= lightIncrease;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>scrDrawBar();
 </string>
           </argument>
         </arguments>

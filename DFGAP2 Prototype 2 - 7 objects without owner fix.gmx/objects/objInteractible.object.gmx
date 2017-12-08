@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-10</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,40 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>player = -1;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if(player != -1 &amp;&amp; instance_exists(player))
-{
-    stress = player.stress;
-    happiness = player.happiness;
-    sleep = player.sleep;
-    
-    scrDrawBar(player,
-    "stress",stress, c_green, c_red,
-    "happiness",happiness, c_green, c_red,
-    "sleep",sleep, c_blue, c_blue);
-}
+            <string>mask_index = sprInteractibleMask;
 </string>
           </argument>
         </arguments>
