@@ -17,6 +17,9 @@
       <sprite>sprites\sprite3</sprite>
       <sprite>sprites\sprite5</sprite>
       <sprite>sprites\sprite4</sprite>
+      <sprite>sprites\sprite6</sprite>
+      <sprite>sprites\sprite7</sprite>
+      <sprite>sprites\sprite8</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background"/>
@@ -25,6 +28,7 @@
     <script>scripts\scrKeyboardCheck.gml</script>
     <script>scripts\scrDrawStatBar.gml</script>
     <script>scripts\scrDrawEmoBar.gml</script>
+    <script>scripts\scrUI.gml</script>
     <scripts name="Player Scripts">
       <script>scripts\scrPlayerWandering.gml</script>
       <script>scripts\scrActivity.gml</script>
@@ -42,6 +46,7 @@
     <object>objects\objComputer</object>
     <object>objects\objPlayer</object>
     <object>objects\objInteractible</object>
+    <object>objects\objUI</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmStart</room>
