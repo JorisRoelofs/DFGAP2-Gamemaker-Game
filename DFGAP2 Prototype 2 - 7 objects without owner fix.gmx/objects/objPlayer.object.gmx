@@ -32,6 +32,9 @@ scrPlayerStatsEmotionsPersonalized();
 mask_index = sprPlayerMask;
 speedMax = 60 / room_speed;
 scrPlayerWandering();
+
+progressExist = -1;
+awakened = false;
 </string>
           </argument>
         </arguments>

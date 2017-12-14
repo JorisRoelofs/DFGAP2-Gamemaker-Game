@@ -27,7 +27,100 @@
             <kind>1</kind>
             <string>playerIndex = 0;
 
+progress = 0;
+limit = 0.8;
+progressSpeedUp = 0.1;
+progressSpeedDown = 1*progressSpeedUp;
+color = c_green;
+
+firstFrame = true;
+
 room_goto_next();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(instance_exists(objUI))
+{
+    if(objUI.sum &gt; limit)
+    {
+        progress += progressSpeedUp * (objUI.sum - limit)/room_speed;
+        color = c_green;
+    }
+    else
+    {
+        progress -= progressSpeedUp * (limit - objUI.sum)/room_speed;
+        color = c_red;
+    }
+}
+
+progress = clamp(progress,0,1);
+
+if(firstFrame)
+{
+    firstFrame = false;
+    with(objPlayer)
+    {
+        if(progressExist != 0) instance_deactivate_object(self);
+        else awakened = true;
+    }
+}
+
+instance_activate_object(objPlayer);
+with(objPlayer)
+{
+    if(progressExist &gt; other.progress &amp;&amp; !awakened) instance_deactivate_object(self);
+    else awakened = true;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>drawX = 0.5*room_width;
+drawY = 10;
+drawHeight = 25;
+drawWidth = 200;
+
+draw_set_color(c_black);
+draw_rectangle(drawX-drawWidth, drawY, drawX+drawWidth, drawY+drawHeight,false);
+draw_set_color(color);
+draw_rectangle(drawX-drawWidth, drawY, drawX-drawWidth+(2*drawWidth*progress), drawY+drawHeight,false);
 </string>
           </argument>
         </arguments>

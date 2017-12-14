@@ -55,14 +55,14 @@
     <instance objName="objSolid" x="224" y="32" name="inst_C966454C" locked="0" code="" scaleX="1" scaleY="22" colour="4294967295" rotation="0"/>
     <instance objName="objBed" x="416" y="448" name="inst_48A686B0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="448" y="384" name="inst_B4076C3C" locked="0" code="" scaleX="5" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPlayer" x="416" y="320" name="inst_46C33382" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objPlayer" x="416" y="320" name="inst_46C33382" locked="0" code="progressExist = 0.05;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPlayer" x="672" y="416" name="inst_4ACAB070" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_framerate" x="64" y="32" name="inst_4F6C228B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBed" x="608" y="448" name="inst_46B35B8B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBed" x="512" y="544" name="inst_A02B9CEF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPlayer" x="576" y="640" name="inst_4C23AE13" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBed" x="512" y="416" name="inst_BD4F6E0A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPlayer" x="512" y="352" name="inst_ECC7B381" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objPlayer" x="512" y="352" name="inst_ECC7B381" locked="0" code="progressExist = 0.2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="768" y="32" name="inst_BFEFAC18" locked="0" code="" scaleX="1" scaleY="22" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="160" y="704" name="inst_A5EFE48C" locked="0" code="" scaleX="22" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSolid" x="160" y="32" name="inst_23F86627" locked="0" code="" scaleX="22" scaleY="1" colour="4294967295" rotation="0"/>
