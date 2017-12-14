@@ -24,7 +24,8 @@ other.playerIndex++;
 }
 for(j = 0; j < 2; j++){
 for(k = 0; k < instance_number(objPlayer); k ++){
-sum += test[k, j];
+if(test[k, j] < 0.5) sum += 2*test[k, j];
+else sum += 2*(1 - test[k, j]);
 }
 }
 sum = sum/(2*instance_number(objPlayer));
