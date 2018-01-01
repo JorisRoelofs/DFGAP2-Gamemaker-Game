@@ -20,6 +20,7 @@
       <sprite>sprites\sprite6</sprite>
       <sprite>sprites\sprite7</sprite>
       <sprite>sprites\sprite8</sprite>
+      <sprite>sprites\sprite11</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background"/>
@@ -36,6 +37,10 @@
       <script>scripts\scrPlayerEmotionsStandard.gml</script>
       <script>scripts\scrPlayerStatsEmotionsPersonalized.gml</script>
     </scripts>
+    <scripts name="Button Scripts">
+      <script>scripts\scrCreateMatrix.gml</script>
+      <script>scripts\scrChangeIndex.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\objGod</object>
@@ -47,6 +52,8 @@
     <object>objects\objPlayer</object>
     <object>objects\objInteractible</object>
     <object>objects\objUI</object>
+    <object>objects\objButton</object>
+    <object>objects\objLamp</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmStart</room>
