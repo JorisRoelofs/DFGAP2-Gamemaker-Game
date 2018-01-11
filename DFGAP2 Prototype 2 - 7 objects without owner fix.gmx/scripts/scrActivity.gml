@@ -51,7 +51,7 @@ for(i = 0; i < array_length_1d(statName); i++)
                             statObject[i] = -1;
                         }
                     }
-                            if(statTool[i] != -1 && instance_exists(statTool[i]) && statTool[i].owner != -1) returnObject[i] = true;
+                    if(statTool[i] != -1 && instance_exists(statTool[i]) && statTool[i].owner != -1) returnObject[i] = true;
                 }   
             }
         }
@@ -61,20 +61,20 @@ for(i = 0; i < array_length_1d(statName); i++)
         statValue[i] = clamp(statValue[i],0,1);
     }
     else if(doSomethingElse && returnObject[i])
+    {
+        doSomethingElse = false;
+        mp_potential_step(statTool[i].returnX, statTool[i].returnY, speedMax, false);
+        if(point_distance(x,y,statTool[i].returnX,statTool[i].returnY) < 32)
         {
-            doSomethingElse = false;
-            mp_potential_step(statTool[i].returnX, statTool[i].returnY, speedMax, false);
-            if(point_distance(x,y,statTool[i].returnX,statTool[i].returnY) < 32)
+            with(statTool[i])
             {
-                with(statTool[i])
-                {
-                    owner = -1;
-                    x = returnX;
-                    y = returnY;
-                }
-                returnObject[i] = false;
+                owner = -1;
+                x = returnX;
+                y = returnY;
             }
+            returnObject[i] = false;
         }
+    }
 }
 
 return doSomethingElse;

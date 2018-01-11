@@ -30,6 +30,7 @@
 owner = -1;
 returnX = x;
 returnY = y;
+returnT = false;
 </string>
           </argument>
         </arguments>

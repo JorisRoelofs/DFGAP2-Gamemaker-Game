@@ -51,11 +51,11 @@ creator = -1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(position_meeting(objLight.x,objLight.y,self) &amp;&amp; mouse_check_button(mb_any))
+            <string>if(position_meeting(objCursor.x,objCursor.y,self) &amp;&amp; mouse_check_button(mb_any))
 {
-    xHandle = clamp(mouse_x,x-sprite_get_width(sprite_index),x+sprite_get_width(sprite_index));
+    pHandle = clamp((mouse_x - x + 0.5*sprite_get_width(sprite_index)) / sprite_get_width(sprite_index),0,1);
+    xHandle = x + (pHandle - 0.5)*sprite_get_width(sprite_index);
     yHandle = y;
-    pHandle = (mouse_x - x + 0.5*sprite_get_width(sprite_index)) / sprite_get_width(sprite_index);
 }
 </string>
           </argument>
@@ -79,10 +79,10 @@ creator = -1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(instance_exists(creator)) creator.image_blend = make_color_rgb(255*pHandle,0,255*(1-pHandle));
+            <string>if(instance_exists(creator)) creator.image_blend = make_color_rgb(254*pHandle,0,254*(1-pHandle));
 draw_self();
 draw_sprite(sprSlider,0,xHandle,yHandle);
-draw_text(x,y,string(pHandle));
+//draw_text(x,y,string(pHandle));
 </string>
           </argument>
         </arguments>

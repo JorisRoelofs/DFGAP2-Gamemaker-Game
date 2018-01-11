@@ -1,4 +1,4 @@
-for(j = 0; j < 2; j++){
+for(j = 0; j < 1; j++){
 for(k = 0; k < instance_number(objPlayer); k ++){
 test[k, j] = 0;
 }
@@ -22,13 +22,13 @@ other.playerIndex++;
 }
 
 }
-for(j = 0; j < 2; j++){
+for(j = 0; j < 1; j++){
 for(k = 0; k < instance_number(objPlayer); k ++){
 if(test[k, j] < 0.5) sum += 2*test[k, j];
 else sum += 2*(1 - test[k, j]);
 }
 }
-sum = sum/(2*instance_number(objPlayer));
+sum = sum/(instance_number(objPlayer));
 if(sum < 0.2 || sum > 0.8){
 draw_set_color(c_green);
 }
@@ -40,9 +40,9 @@ draw_set_color(c_black);
 for(j = 0; j < instance_number(objPlayer); j++){
 draw_text(x+ 325, y-215 + j*100, "Player" + string(j + 1));
 
-if( (test[j,0] < 0.2 || test[j,0] > 0.8)||(test[j,1] < 0.2 || test[j,1] > 0.8)){
+if( (test[j,0] < 0.2 || test[j,0] > 0.8)){
 spr = sprite8}
-else if( (test[j,0] < 0.35 || test[j,0] > 0.65)||(test[j,1] < 0.35 || test[j,1] > 0.65)){
+else if( (test[j,0] < 0.35 || test[j,0] > 00.65)){
 spr = sprite7}
 else{
 spr = sprite6}

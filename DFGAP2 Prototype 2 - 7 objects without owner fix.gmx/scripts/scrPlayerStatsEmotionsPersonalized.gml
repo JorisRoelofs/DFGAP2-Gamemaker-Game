@@ -1,12 +1,11 @@
 switch(objGod.playerIndex)
 {
     case 0:
-        
+        emoLightIncrease[0] = 4;
         break;
     
     case 1:
         statValueDecrease[0] = 36;
-        emoLightIncrease[0] = 4;
         statValueDecrease[1] = 36;
         statObject[1] = -1;
         statValue[2] = 1;

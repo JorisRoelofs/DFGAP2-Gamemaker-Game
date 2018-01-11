@@ -45,6 +45,7 @@
     <scripts name="Button Scripts">
       <script>scripts\scrCreateMatrix.gml</script>
       <script>scripts\scrChangeIndex.gml</script>
+      <script>scripts\scrLightBlend.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
@@ -63,15 +64,16 @@
     <objects name="Buttons">
       <object>objects\objSlider</object>
       <object>objects\objButton</object>
-      <object>objects\objLampSlider</object>
+      <object>objects\objLight</object>
       <object>objects\objLamp</object>
+      <object>objects\objLampSlider</object>
       <object>objects\objRadio</object>
     </objects>
     <objects name="Control">
       <object>objects\objGod</object>
       <object>objects\objUI</object>
       <object>objects\obj_framerate</object>
-      <object>objects\objLight</object>
+      <object>objects\objCursor</object>
     </objects>
   </objects>
   <rooms name="rooms">

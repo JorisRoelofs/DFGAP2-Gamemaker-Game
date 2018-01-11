@@ -49,20 +49,14 @@ input = -1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(position_meeting(objLight.x,objLight.y,self))
+            <string>if(position_meeting(objCursor.x,objCursor.y,self))
 {
     image_index = 1;
     if(mouse_check_button_pressed(mb_any) &amp;&amp; script != -1) script_execute(script,input);
 }
 else image_index = 0;
 
-switch(input[1])
-{
-    case 0: image_blend = make_color_rgb(255,255,255) break;
-    case 1: image_blend = make_color_rgb(255,0,0) break;
-    case 2: image_blend = make_color_rgb(0,255,0) break;
-    case 3: image_blend = make_color_rgb(0,0,255) break;
-}
+scrLightBlend(input[1]);
 </string>
           </argument>
         </arguments>
