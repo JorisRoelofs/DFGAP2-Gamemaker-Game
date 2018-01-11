@@ -46,20 +46,26 @@
     </scripts>
   </scripts>
   <objects name="objects">
-    <object>objects\objGod</object>
-    <object>objects\obj_framerate</object>
-    <object>objects\objLight</object>
     <object>objects\objSolid</object>
-    <object>objects\objBed</object>
-    <object>objects\objComputer</object>
     <object>objects\objPlayer</object>
-    <object>objects\objInteractible</object>
-    <object>objects\objUI</object>
-    <object>objects\objButton</object>
-    <object>objects\objLamp</object>
-    <object>objects\objRadio</object>
-    <object>objects\objSlider</object>
-    <object>objects\objLampSlider</object>
+    <objects name="Interactible">
+      <object>objects\objInteractible</object>
+      <object>objects\objComputer</object>
+      <object>objects\objBed</object>
+    </objects>
+    <objects name="Buttons">
+      <object>objects\objSlider</object>
+      <object>objects\objButton</object>
+      <object>objects\objLampSlider</object>
+      <object>objects\objLamp</object>
+      <object>objects\objRadio</object>
+    </objects>
+    <objects name="Control">
+      <object>objects\objGod</object>
+      <object>objects\objUI</object>
+      <object>objects\obj_framerate</object>
+      <object>objects\objLight</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmStart</room>
