@@ -81,6 +81,36 @@ for(i=0;i&lt;array_length_1d(emoName);i++)
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="objTool">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>for(i = 0; i &lt; array_length_1d(statName); i++)
+{
+    if(statTool[i] != -1
+    &amp;&amp; instance_exists(statTool[i])
+    &amp;&amp; statValue[i] &lt;= 0
+    &amp;&amp; statTool[i].id = other.id)
+        statTool[i].owner = id;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="objInteractible">
       <action>
         <libid>1</libid>
@@ -185,6 +215,14 @@ for(i=0;i&lt;array_length_1d(emoName);i++)
             <kind>1</kind>
             <string>//scrDrawStatBar();
 scrDrawEmoBar();
+
+draw_text(x,y,string(returnObject[2]));
+if(statTool[2] != -1)
+{
+    draw_text(x,y+20,string(statTool[2].owner));
+    draw_text(x-20,y+40,string(statTool[2].returnX));
+    draw_text(x+20,y+40,string(statTool[2].returnY));
+}
 </string>
           </argument>
         </arguments>

@@ -24,6 +24,8 @@
       <sprite>sprites\sprSlider</sprite>
       <sprite>sprites\sprite14</sprite>
       <sprite>sprites\sprite12</sprite>
+      <sprite>sprites\sprite15</sprite>
+      <sprite>sprites\sprite16</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background"/>
@@ -52,6 +54,11 @@
       <object>objects\objInteractible</object>
       <object>objects\objComputer</object>
       <object>objects\objBed</object>
+      <object>objects\objShit</object>
+    </objects>
+    <objects name="Tools">
+      <object>objects\objTool</object>
+      <object>objects\objSweeper</object>
     </objects>
     <objects name="Buttons">
       <object>objects\objSlider</object>

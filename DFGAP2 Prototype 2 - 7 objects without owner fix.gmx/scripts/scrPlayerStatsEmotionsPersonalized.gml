@@ -1,12 +1,16 @@
 switch(objGod.playerIndex)
 {
     case 0:
-        statValueDecrease[0] = 6;
+        
         break;
     
     case 1:
-        statObject[1] = -1;
+        statValueDecrease[0] = 36;
         emoLightIncrease[0] = 4;
+        statValueDecrease[1] = 36;
+        statObject[1] = -1;
+        statValue[2] = 1;
+        statTool[2] = instance_nearest(x,y,objSweeper);
         break;
     
     case 2:
