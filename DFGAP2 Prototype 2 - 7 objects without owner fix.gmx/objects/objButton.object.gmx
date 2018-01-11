@@ -3,7 +3,7 @@
   <spriteName>sprite11</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-10</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -55,6 +55,14 @@ input = -1;
     if(mouse_check_button_pressed(mb_any) &amp;&amp; script != -1) script_execute(script,input);
 }
 else image_index = 0;
+
+switch(input[1])
+{
+    case 0: image_blend = make_color_rgb(255,255,255) break;
+    case 1: image_blend = make_color_rgb(255,0,0) break;
+    case 2: image_blend = make_color_rgb(0,255,0) break;
+    case 3: image_blend = make_color_rgb(0,0,255) break;
+}
 </string>
           </argument>
         </arguments>

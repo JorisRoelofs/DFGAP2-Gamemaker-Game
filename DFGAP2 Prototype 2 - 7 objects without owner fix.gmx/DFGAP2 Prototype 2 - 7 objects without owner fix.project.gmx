@@ -21,6 +21,9 @@
       <sprite>sprites\sprite7</sprite>
       <sprite>sprites\sprite8</sprite>
       <sprite>sprites\sprite11</sprite>
+      <sprite>sprites\sprSlider</sprite>
+      <sprite>sprites\sprite14</sprite>
+      <sprite>sprites\sprite12</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background"/>
@@ -54,6 +57,9 @@
     <object>objects\objUI</object>
     <object>objects\objButton</object>
     <object>objects\objLamp</object>
+    <object>objects\objRadio</object>
+    <object>objects\objSlider</object>
+    <object>objects\objLampSlider</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmStart</room>
