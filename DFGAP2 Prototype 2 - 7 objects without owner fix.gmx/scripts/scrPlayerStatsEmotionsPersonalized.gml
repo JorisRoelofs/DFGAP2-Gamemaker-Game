@@ -8,6 +8,7 @@ switch(objGod.playerIndex)
         statValueIncrease[0] = 2;
         statFindNewObject[0] = false;
         statFindNewTool[0] = true;
+        statToOptimal[0] = true;
         break;
     
     case 1:

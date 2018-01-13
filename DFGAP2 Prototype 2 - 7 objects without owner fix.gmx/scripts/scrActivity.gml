@@ -60,6 +60,8 @@ for(j = 0; j < array_length_1d(statName); j++)
                     emoValue[j] += statActivityEmotionChange[i,j]/(statValueIncrease[i]*room_speed);
                 }
                 
+                if(statToOptimal[i]) emoValue[0] = emoOptimal[0];
+                
                 if(statValue[i] >= 1)
                 {
                     statActivityTrue[i] = false;
