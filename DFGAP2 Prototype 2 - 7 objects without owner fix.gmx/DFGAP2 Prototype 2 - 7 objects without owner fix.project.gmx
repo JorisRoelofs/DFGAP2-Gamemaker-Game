@@ -60,6 +60,7 @@
       <script>scripts\scrChangeIndex.gml</script>
       <script>scripts\scrLightBlend.gml</script>
     </scripts>
+    <script>scripts\array.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\objSolid</object>
@@ -69,10 +70,19 @@
       <object>objects\objComputer</object>
       <object>objects\objBed</object>
       <object>objects\objShit</object>
+      <object>objects\objEatingLocation</object>
+      <object>objects\objServingLocation</object>
+      <object>objects\objCleaningLocation</object>
+      <object>objects\objDishwasher</object>
+      <object>objects\objKitchen</object>
     </objects>
     <objects name="Tools">
       <object>objects\objTool</object>
       <object>objects\objSweeper</object>
+      <object>objects\objFood</object>
+      <object>objects\objFoodServe</object>
+      <object>objects\objFoodUsed</object>
+      <object>objects\objFoodPlate</object>
     </objects>
     <objects name="Buttons">
       <object>objects\objSlider</object>

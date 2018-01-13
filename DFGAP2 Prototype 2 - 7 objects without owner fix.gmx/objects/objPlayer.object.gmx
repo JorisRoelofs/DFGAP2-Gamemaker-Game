@@ -30,7 +30,7 @@ scrPlayerStatsStandard();
 scrPlayerStatsEmotionsPersonalized();
 
 mask_index = sprPlayerMask;
-speedMaxMax = 120 / room_speed;
+speedMaxMax = 1200 / room_speed;
 speedMax = speedMaxMax;
 scrPlayerWandering();
 

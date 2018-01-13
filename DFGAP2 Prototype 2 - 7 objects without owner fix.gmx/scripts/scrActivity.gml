@@ -1,8 +1,31 @@
 doSomethingElse = true;
 
-for(i = 0; i < array_length_1d(statName); i++)
+for(j = 0; j < array_length_1d(statName); j++)
 {
-    if(statObject[i] != -1 && instance_exists(statObject[i]) && statValue[i] != -1)
+    i = priority[j];
+    
+    if(statFindNewTool[i] && !instance_exists(statTool[i]))
+    {
+        if(instance_exists(statToolParent[i])) statTool[i] = instance_nearest(x,y,statToolParent[i].object_index);
+        else statValue[i] = clamp(statValue[i],0.01,1);
+    }
+    
+    if(doSomethingElse && returnObject[i])
+    {
+        doSomethingElse = false;
+        mp_potential_step(statTool[i].returnX, statTool[i].returnY, speedMax, false);
+        if(point_distance(x,y,statTool[i].returnX,statTool[i].returnY) < 32)
+        {
+            with(statTool[i])
+            {
+                owner = -1;
+                x = returnX;
+                y = returnY;
+            }
+            returnObject[i] = false;
+        }
+    }
+    else if(statObject[i] != -1 && instance_exists(statObject[i]) && statValue[i] != -1)
     {
         if(doSomethingElse)
         {
@@ -51,7 +74,14 @@ for(i = 0; i < array_length_1d(statName); i++)
                             statObject[i] = -1;
                         }
                     }
-                    if(statTool[i] != -1 && instance_exists(statTool[i]) && statTool[i].owner != -1) returnObject[i] = true;
+                    if(statTool[i] != -1 && instance_exists(statTool[i]) && statTool[i].owner != -1)
+                    {
+                        if(statFindNewObject[i])
+                        {
+                            if(statObject[i] = -1) returnObject[i] = true;
+                        }
+                        else returnObject[i] = true;
+                    }
                 }   
             }
         }
@@ -59,21 +89,6 @@ for(i = 0; i < array_length_1d(statName); i++)
         else statValue[i] -= 1/(statValueDecrease[i]*room_speed);
         
         statValue[i] = clamp(statValue[i],0,1);
-    }
-    else if(doSomethingElse && returnObject[i])
-    {
-        doSomethingElse = false;
-        mp_potential_step(statTool[i].returnX, statTool[i].returnY, speedMax, false);
-        if(point_distance(x,y,statTool[i].returnX,statTool[i].returnY) < 32)
-        {
-            with(statTool[i])
-            {
-                owner = -1;
-                x = returnX;
-                y = returnY;
-            }
-            returnObject[i] = false;
-        }
     }
 }
 
