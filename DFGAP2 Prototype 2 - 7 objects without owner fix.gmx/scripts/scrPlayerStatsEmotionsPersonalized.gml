@@ -1,5 +1,17 @@
 switch(objGod.playerIndex)
 {
+    case 1:
+        statValueDecrease[0] = 4;
+        statValueDecrease[1] = 4;
+        statObject[1] = -1;
+        statValue[2] = 1;
+        statTool[2] = instance_nearest(x,y,objSweeper);
+        statToolParent[2] = objSweeper;
+        priority = array(2,0,1);
+        progressExist = 1;
+        employee = true;
+        break;
+
     case 0:
         statObject[0] = instance_nearest(x,y,objEatingLocation);
         statTool[0] = instance_nearest(x,y,objFood);
@@ -9,15 +21,7 @@ switch(objGod.playerIndex)
         statFindNewObject[0] = false;
         statFindNewTool[0] = true;
         statToOptimal[0] = true;
-        break;
-    
-    case 1:
-        statValueDecrease[0] = 4;
-        statValueDecrease[1] = 4;
-        statObject[1] = -1;
-        statValue[2] = 1;
-        statTool[2] = instance_nearest(x,y,objSweeper);
-        priority = array(2,0,1);
+        progressExist = 30;
         break;
     
     case 2:
@@ -28,6 +32,8 @@ switch(objGod.playerIndex)
         statValueIncrease[0] = 2;
         statFindNewObject[0] = false;
         statFindNewTool[0] = true;
+        progressExist = 10;
+        employee = true;
         break;
 
     case 3:
@@ -38,6 +44,8 @@ switch(objGod.playerIndex)
         statValueIncrease[0] = 2;
         statFindNewObject[0] = false;
         statFindNewTool[0] = true;
+        progressExist = 14;
+        employee = true;
         break;
 
     case 4:
@@ -48,7 +56,8 @@ switch(objGod.playerIndex)
         statValueIncrease[0] = 2;
         statFindNewObject[0] = false;
         statFindNewTool[0] = true;
-        break;
+        progressExist = 11;
+        employee = true;
         break;
 
     case 5:

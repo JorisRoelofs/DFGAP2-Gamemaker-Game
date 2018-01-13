@@ -35,6 +35,9 @@ color = c_green;
 
 firstFrame = true;
 
+sum = 0;
+sumTotal = 0;
+
 room_goto_next();
 </string>
           </argument>
@@ -59,14 +62,25 @@ room_goto_next();
           <argument>
             <kind>1</kind>
             <string>sum = 0;
-
-with(objPlayer)
+n = 0;
+if(instance_exists(objPlayer))
 {
-    if(emoValue[0] &lt; emoOptimal[0]) other.sum += emoValue[0]/emoOptimal[0];
-    else other.sum += (1-emoValue[0])/emoOptimal[0];
+    with(objPlayer)
+    {
+        if(!employee)
+        {
+            if(emoValue[0] &lt; emoOptimal[0]) other.sum += emoValue[0]/emoOptimal[0];
+            else other.sum += (1-emoValue[0])/emoOptimal[0];
+            other.n++;
+        }
+    }
+    
+    if(n &gt; 0)
+    {
+        sum = sum/n;
+        sumTotal += sum/room_speed;
+    }
 }
-sum = sum/(instance_number(objPlayer));
-
 
 /*if(sum &gt; limit)
 {
@@ -80,9 +94,9 @@ else
 }*/
 
 //progress = clamp(progress,0,1);
-progress += 1/room_speed;
+//progress += 1/room_speed;
 
-if(firstFrame)
+/*if(firstFrame)
 {
     firstFrame = false;
     with(objPlayer)
@@ -90,13 +104,14 @@ if(firstFrame)
         if(progressExist != 0) instance_deactivate_object(self);
         else awakened = true;
     }
-}
+}*/
+
+progress += 1/room_speed;
 
 instance_activate_object(objPlayer);
 with(objPlayer)
 {
-    if(progressExist &gt; other.progress &amp;&amp; !awakened) instance_deactivate_object(self);
-    else awakened = true;
+    if(progressExist &gt; other.progress) instance_deactivate_object(self);
 }
 </string>
           </argument>
@@ -130,6 +145,7 @@ draw_rectangle(drawX, drawY, drawX+drawWidth, drawY+drawHeight,false);
 draw_set_color(color);
 draw_rectangle(drawX, drawY, drawX+(drawWidth*sum), drawY+drawHeight,false);
 draw_text(drawX,drawY,'Customer happiness');
+draw_text(drawX,drawY+8,'Score: ' + string(sumTotal));
 
 /*
 drawX = 0.5*room_width;

@@ -65,6 +65,12 @@
   <objects name="objects">
     <object>objects\objSolid</object>
     <object>objects\objPlayer</object>
+    <object>objects\objDoor</object>
+    <objects name="Control">
+      <object>objects\objGod</object>
+      <object>objects\obj_framerate</object>
+      <object>objects\objCursor</object>
+    </objects>
     <objects name="Interactible">
       <object>objects\objInteractible</object>
       <object>objects\objComputer</object>
@@ -93,11 +99,6 @@
       <object>objects\objLampSlider</object>
       <object>objects\objLampSliderSquare</object>
       <object>objects\objRadio</object>
-    </objects>
-    <objects name="Control">
-      <object>objects\objGod</object>
-      <object>objects\obj_framerate</object>
-      <object>objects\objCursor</object>
     </objects>
   </objects>
   <rooms name="rooms">

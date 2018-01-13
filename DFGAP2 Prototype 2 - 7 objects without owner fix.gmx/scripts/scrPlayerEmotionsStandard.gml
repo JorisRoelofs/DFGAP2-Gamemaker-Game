@@ -7,3 +7,5 @@ emoLightIncrease[i,j] = -1/30; j++;
 emoLightIncrease[i,j] = 1/30; j++;
 emoLightIncrease[i,j] = 1/10; j++;
 emoOptimal[i] = 0.5;
+
+employee = false;
