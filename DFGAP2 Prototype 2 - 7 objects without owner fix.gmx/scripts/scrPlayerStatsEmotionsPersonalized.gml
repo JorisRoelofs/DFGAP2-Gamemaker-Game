@@ -1,13 +1,9 @@
 switch(objGod.playerIndex)
 {
     case 1:
-        statValueDecrease[0] = 4;
-        statValueDecrease[1] = 4;
-        statObject[1] = -1;
-        statValue[2] = 1;
-        statTool[2] = instance_nearest(x,y,objSweeper);
-        statToolParent[2] = objSweeper;
-        priority = array(2,0,1);
+        statValue[0] = 1;
+        statTool[0] = instance_nearest(x,y,objSweeper);
+        statToolParent[0] = objSweeper;
         progressExist = 1;
         employee = true;
         break;
