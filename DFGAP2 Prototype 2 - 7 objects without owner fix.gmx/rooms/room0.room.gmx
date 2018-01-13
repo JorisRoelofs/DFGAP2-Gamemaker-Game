@@ -68,7 +68,6 @@
     <instance objName="objSolid" x="160" y="32" name="inst_23F86627" locked="0" code="" scaleX="22" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objComputer" x="512" y="288" name="inst_CB25E2A3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objComputer" x="416" y="256" name="inst_6D0CE1F7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objUI" x="512" y="384" name="inst_EAEBEE80" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objLampSlider" x="576" y="544" name="inst_DE57041C" locked="0" code="" scaleX="6.09523820877075" scaleY="5.06349229812622" colour="4294967295" rotation="0"/>
     <instance objName="objShit" x="704" y="352" name="inst_B295770B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objShit" x="608" y="320" name="inst_A97CBCDB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

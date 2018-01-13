@@ -109,8 +109,8 @@ else
           <argument>
             <kind>1</kind>
             <string>///Framerate
-draw_set_color(c_black);
-draw_text(10,10,"FPS: " + string(fpsAverage));
+draw_set_color(c_yellow);
+draw_text(4,4,"FPS: " + string(fpsAverage));
 </string>
           </argument>
         </arguments>

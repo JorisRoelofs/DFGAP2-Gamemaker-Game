@@ -1,7 +1,6 @@
 switch(objGod.playerIndex)
 {
     case 0:
-        emoLightIncrease[0] = 4;
         break;
     
     case 1:

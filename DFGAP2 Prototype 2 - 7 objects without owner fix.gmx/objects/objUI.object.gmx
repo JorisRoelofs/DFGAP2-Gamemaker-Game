@@ -48,7 +48,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scrUI();
+            <string>//scrUI();
 </string>
           </argument>
         </arguments>

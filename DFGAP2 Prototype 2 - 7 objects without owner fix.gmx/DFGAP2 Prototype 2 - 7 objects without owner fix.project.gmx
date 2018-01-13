@@ -22,13 +22,26 @@
       <sprite>sprites\sprite8</sprite>
       <sprite>sprites\sprite11</sprite>
       <sprite>sprites\sprSlider</sprite>
-      <sprite>sprites\sprite14</sprite>
+      <sprite>sprites\sprLightRound</sprite>
+      <sprite>sprites\sprLightSquare</sprite>
       <sprite>sprites\sprite12</sprite>
       <sprite>sprites\sprite15</sprite>
       <sprite>sprites\sprite16</sprite>
     </sprites>
+    <sprites name="Players">
+      <sprite>sprites\Idle_down</sprite>
+      <sprite>sprites\Idle_left</sprite>
+      <sprite>sprites\Idle_right</sprite>
+      <sprite>sprites\Idle_up</sprite>
+      <sprite>sprites\Down</sprite>
+      <sprite>sprites\Left</sprite>
+      <sprite>sprites\Right</sprite>
+      <sprite>sprites\Up</sprite>
+    </sprites>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\background0</background>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scrKeyboardCheck.gml</script>
@@ -66,18 +79,22 @@
       <object>objects\objButton</object>
       <object>objects\objLight</object>
       <object>objects\objLamp</object>
+      <object>objects\objLampSquare</object>
       <object>objects\objLampSlider</object>
+      <object>objects\objLampSliderSquare</object>
       <object>objects\objRadio</object>
     </objects>
     <objects name="Control">
       <object>objects\objGod</object>
-      <object>objects\objUI</object>
       <object>objects\obj_framerate</object>
       <object>objects\objCursor</object>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmStart</room>
+    <room>rooms\room4</room>
+    <room>rooms\room3</room>
+    <room>rooms\room2</room>
     <room>rooms\room0</room>
   </rooms>
   <help>

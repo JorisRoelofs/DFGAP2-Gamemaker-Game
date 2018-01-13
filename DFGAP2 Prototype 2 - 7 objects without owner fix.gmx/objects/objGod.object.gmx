@@ -58,21 +58,29 @@ room_goto_next();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(instance_exists(objUI))
-{
-    if(objUI.sum &gt; limit)
-    {
-        progress += progressSpeedUp * (objUI.sum - limit)/room_speed;
-        color = c_green;
-    }
-    else
-    {
-        progress -= progressSpeedUp * (limit - objUI.sum)/room_speed;
-        color = c_red;
-    }
-}
+            <string>sum = 0;
 
-progress = clamp(progress,0,1);
+with(objPlayer)
+{
+    if(emoValue[0] &lt; emoOptimal[0]) other.sum += emoValue[0]/emoOptimal[0];
+    else other.sum += (1-emoValue[0])/emoOptimal[0];
+}
+sum = sum/(instance_number(objPlayer));
+
+
+/*if(sum &gt; limit)
+{
+    progress += progressSpeedUp * (sum - limit)/room_speed;
+    color = c_green;
+}
+else
+{
+    progress -= progressSpeedUp * (limit - sum)/room_speed;
+    color = c_red;
+}*/
+
+//progress = clamp(progress,0,1);
+progress += 1/room_speed;
 
 if(firstFrame)
 {
@@ -112,15 +120,73 @@ with(objPlayer)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>drawX = 0.5*room_width;
-drawY = 10;
-drawHeight = 25;
+            <string>drawX = 8;
+drawY = 8;
+drawHeight = 8;
+drawWidth = 64;
+
+draw_set_color(c_black);
+draw_rectangle(drawX, drawY, drawX+drawWidth, drawY+drawHeight,false);
+draw_set_color(color);
+draw_rectangle(drawX, drawY, drawX+(drawWidth*sum), drawY+drawHeight,false);
+draw_text(drawX,drawY,'Customer happiness');
+
+/*
+drawX = 0.5*room_width;
+drawY = 0;
+drawHeight = 8;
 drawWidth = 200;
 
 draw_set_color(c_black);
 draw_rectangle(drawX-drawWidth, drawY, drawX+drawWidth, drawY+drawHeight,false);
 draw_set_color(color);
-draw_rectangle(drawX-drawWidth, drawY, drawX-drawWidth+(2*drawWidth*progress), drawY+drawHeight,false);
+draw_rectangle(drawX-drawWidth, drawY, drawX-drawWidth+(2*drawWidth*sum), drawY+drawHeight,false);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="82">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>game_restart();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="49">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>window_set_fullscreen(!window_get_fullscreen());
 </string>
           </argument>
         </arguments>
