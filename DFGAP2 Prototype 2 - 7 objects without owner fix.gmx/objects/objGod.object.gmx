@@ -135,7 +135,22 @@ with(objPlayer)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>drawX = 8;
+            <string>/*
+with(objPlayer)
+{
+    draw_sprite_ext(mask_index,0,x,y,1,1,0,c_aqua,0.5);
+}
+with(objInteractible)
+{
+    draw_sprite_ext(mask_index,0,x,y,1,1,0,c_aqua,0.5);
+}
+
+with(objTool)
+{
+    draw_sprite_ext(mask_index,0,x,y,1,1,0,c_aqua,0.5);
+}*/
+
+drawX = 8;
 drawY = 8;
 drawHeight = 8;
 drawWidth = 64;

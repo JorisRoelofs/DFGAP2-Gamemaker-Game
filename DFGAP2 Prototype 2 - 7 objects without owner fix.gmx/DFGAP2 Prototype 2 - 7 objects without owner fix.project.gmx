@@ -26,7 +26,16 @@
       <sprite>sprites\sprLightSquare</sprite>
       <sprite>sprites\sprite12</sprite>
       <sprite>sprites\sprite15</sprite>
+      <sprite>sprites\sprite129</sprite>
+      <sprite>sprites\sprite131</sprite>
+      <sprite>sprites\sprite130</sprite>
+      <sprite>sprites\sprite128</sprite>
       <sprite>sprites\sprite16</sprite>
+      <sprite>sprites\sprite124</sprite>
+      <sprite>sprites\sprite122</sprite>
+      <sprite>sprites\sprite125</sprite>
+      <sprite>sprites\sprite126</sprite>
+      <sprite>sprites\sprite127</sprite>
     </sprites>
     <sprites name="Players">
       <sprite>sprites\Idle_down</sprite>
@@ -137,6 +146,7 @@
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
+    <background>background\background1</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -161,11 +171,11 @@
   <objects name="objects">
     <object>objects\objSolid</object>
     <object>objects\objPlayer</object>
-    <object>objects\objDoor</object>
     <objects name="Control">
       <object>objects\objGod</object>
       <object>objects\obj_framerate</object>
       <object>objects\objCursor</object>
+      <object>objects\objDoor</object>
     </objects>
     <objects name="Interactible">
       <object>objects\objInteractible</object>
@@ -199,6 +209,7 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rmStart</room>
+    <room>rooms\room5</room>
     <room>rooms\room4</room>
     <room>rooms\room3</room>
     <room>rooms\room2</room>

@@ -51,7 +51,7 @@ index = 0;
             <kind>1</kind>
             <string>x = mouse_x;
 y = mouse_y;
-
+/*
 index = 0;
 if(scrKeyboardCheck('Q') != 0) index = 1;
 else if(scrKeyboardCheck('A') != 0) index = 2;

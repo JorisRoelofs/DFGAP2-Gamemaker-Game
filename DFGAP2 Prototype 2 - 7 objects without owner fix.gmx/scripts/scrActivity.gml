@@ -10,7 +10,7 @@ for(j = 0; j < array_length_1d(statName); j++)
         else statValue[i] = clamp(statValue[i],0.01,1);
     }
     
-    if(doSomethingElse && returnObject[i])
+    if(doSomethingElse && returnObject[i] && instance_exists(statTool[i]))
     {
         doSomethingElse = false;
         mp_potential_step(statTool[i].returnX, statTool[i].returnY, speedMax, false);

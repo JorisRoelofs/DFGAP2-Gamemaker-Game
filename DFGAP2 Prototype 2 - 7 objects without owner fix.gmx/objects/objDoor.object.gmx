@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>repeat(5) instance_create(x,y,objPlayer);
+            <string>repeat(7) instance_create(x,y,objPlayer);
 </string>
           </argument>
         </arguments>
